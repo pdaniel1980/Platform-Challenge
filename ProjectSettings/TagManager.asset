@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Coin
+  - DoubleJump
+  - PlatformBlock
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Background
+  - Water
+  - UI
+  - Ground
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 2110606827
+    locked: 0
+  - name: Backdrop
+    uniqueID: 2251566777
+    locked: 0
+  - name: Structure
+    uniqueID: 3888060457
+    locked: 0
+  - name: Platform
+    uniqueID: 2964816051
+    locked: 0
+  - name: Object
+    uniqueID: 2450559013
+    locked: 0
+  - name: Player
+    uniqueID: 3925260121
+    locked: 0
