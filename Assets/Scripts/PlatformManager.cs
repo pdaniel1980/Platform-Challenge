@@ -60,8 +60,8 @@ public class PlatformManager : MonoBehaviour
         lastPlatformGO = prefabPlatforms[index];
         lastPlatformGO.SetActive(true);
         lastPlatformGO.transform.position = targetOffsetPoint;        
-        lastPlatformGO.name = "Platform_" + platformNumber;
-        platformNumber++;
+        //lastPlatformGO.name = "Platform_" + platformNumber;
+        //platformNumber++;
         CheckPlatformWidth();
     }
 

@@ -30,6 +30,15 @@ public class PlatformController : MonoBehaviour
         if ((platformGO.transform.position.x + lastPlatformWidth) < platformManager.EndingPointGO.transform.position.x)
         {
             platformGO.SetActive(false);
+            ActivateChildrens(platformGO.transform);
+        }
+    }
+
+    private void ActivateChildrens(Transform parentT)
+    {
+        for (int i = 0; i < parentT.childCount; i++)
+        {
+            parentT.GetChild(i).gameObject.SetActive(true);
         }
     }
 
