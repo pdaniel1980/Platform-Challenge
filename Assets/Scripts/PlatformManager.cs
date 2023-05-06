@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformManager : MonoBehaviour
@@ -9,7 +8,6 @@ public class PlatformManager : MonoBehaviour
     [SerializeField] GameObject[] prefabPlatforms;
     [SerializeField] float speed;
     
-    int platformNumber = 0;
     float lastPlatformWidth;
     float spaceBetweenPlatforms;
     
@@ -37,11 +35,6 @@ public class PlatformManager : MonoBehaviour
     {
         for (int i = 0; i < prefabPlatforms.Length; i++)
         {
-            //go = Instantiate(prefabPlatforms[i], startingPointGO.transform.position, Quaternion.identity);
-            //go.SetActive(false);
-            //platforms.Add(go);
-            //Vector3 targetOffsetPoint = new Vector3(startingPointGO.transform.position.x + spaceBetweenPlatforms, startingPointGO.transform.position.y, 0);
-            
             prefabPlatforms[i] = Instantiate(prefabPlatforms[i]);
             prefabPlatforms[i].SetActive(false);
         }
@@ -55,20 +48,12 @@ public class PlatformManager : MonoBehaviour
             return;
 
         spaceBetweenPlatforms = Random.Range(1.5f, 5f);
-        Vector3 targetOffsetPoint = new Vector3(startingPointGO.transform.position.x + spaceBetweenPlatforms, startingPointGO.transform.position.y, 0);
-        //lastPlatformGO = Instantiate(prefabPlatforms[index], targetCreationPoint, Quaternion.identity);
         lastPlatformGO = prefabPlatforms[index];
+        Vector3 targetOffsetPoint = new Vector3(startingPointGO.transform.position.x + spaceBetweenPlatforms, lastPlatformGO.transform.position.y, 0);
         lastPlatformGO.SetActive(true);
         lastPlatformGO.transform.position = targetOffsetPoint;        
-        //lastPlatformGO.name = "Platform_" + platformNumber;
-        //platformNumber++;
         CheckPlatformWidth();
     }
-
-    //private void SpaceBetweenPlatformsSpawned()
-    //{
-    //    spaceBetweenPlatforms = Random.Range(1.5f, 5f);
-    //}
 
     private void CheckPlatformWidth()
     {

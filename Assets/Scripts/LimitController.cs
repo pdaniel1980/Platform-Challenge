@@ -18,16 +18,4 @@ public class LimitController : MonoBehaviour
             gameManager.GameOver();
         }
     }
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    //Debug.Log("GO: " + collision.name);
-    //    if (collision.CompareTag("Platform") && limitGO.name == "LeftLimit")
-    //    {
-    //        //Debug.Log("Salimossss: " + collision.name);
-    //        //Destroy(collision.gameObject);
-    //        collision.gameObject.SetActive(false);
-    //    }
-        
-    //}
 }

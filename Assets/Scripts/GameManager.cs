@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject audioFXGO;
     AudioFX audioFX;
 
-    [SerializeField] AudioClip[] audioClips;
+    [SerializeField] AudioClip audioClip;
     AudioSource audioSource;
 
     [SerializeField] GameObject limitGO;
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
-        audioSource.clip = audioClips[0];
+        audioSource.clip = audioClip;
         audioSource.volume = 0.2f;
         audioSource.Play();
     }

@@ -15,8 +15,6 @@ public class PlatformController : MonoBehaviour
     {
         platformManager = GameObject.FindObjectOfType<PlatformManager>();
         CheckPlatformWidth();
-        //CheckPlatformWidth();
-        //Debug.Log(platformGO.name + " size: " + lastPlatformWidth);
     }
 
     private void Update()

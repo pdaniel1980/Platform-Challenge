@@ -105,12 +105,10 @@ public class PlayerController : MonoBehaviour
             case "Coin":
                 audioFX.PlayFX(AudioFX.AudioClipName.Coin);
                 scoreManager.CoinsCollected += 1;
-                //Destroy(collision.gameObject);
                 collision.gameObject.SetActive(false);
                 break;
             case "DoubleJump":
                 audioFX.PlayFX(AudioFX.AudioClipName.DoubleJump);
-                //Destroy(collision.gameObject);
                 collision.gameObject.SetActive(false);
                 isDoubleJumpEnable = true;
                 break;
