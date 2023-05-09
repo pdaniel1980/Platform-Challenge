@@ -103,8 +103,9 @@ public class PlayerController : MonoBehaviour
         switch (collision.tag)
         {
             case "Coin":
+                scoreManager.CoinsCollected += scoreManager.CoinValue;
+                scoreManager.UpdateScore();
                 audioFX.PlayFX(AudioFX.AudioClipName.Coin);
-                scoreManager.CoinsCollected += 1;
                 collision.gameObject.SetActive(false);
                 break;
             case "DoubleJump":

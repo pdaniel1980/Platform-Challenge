@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
     private void Start()
     {
         scoreManagerGO = GameObject.Find("ScoreManager");
-        coinsCollectedText.text += scoreManagerGO.GetComponent<ScoreManager>().CoinsCollected.ToString();
+        coinsCollectedText.text = scoreManagerGO.GetComponent<ScoreManager>().CoinsCollected.ToString();
     }
 
     public void RetryGame()
