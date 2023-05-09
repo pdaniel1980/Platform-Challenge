@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] Transform transformCheckGroundedPoint;
     [SerializeField] GameObject scoreManagerGO;
+    private PlayerExtras playerExtras;
     ScoreManager scoreManager;
     Rigidbody2D rb;
     
@@ -20,7 +21,6 @@ public class PlayerController : MonoBehaviour
     float lastPlayerPositionY;
 
     bool canDoubleJump;
-    bool isDoubleJumpEnable;
     bool hitGround;
 
     private void Awake()
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         jumpId = Animator.StringToHash("Jump");
         landingId = Animator.StringToHash("IsLanding");
         rb = gameObject.GetComponent<Rigidbody2D>();
+        playerExtras = GetComponent<PlayerExtras>();
     }
 
     void Start()
@@ -49,9 +50,9 @@ public class PlayerController : MonoBehaviour
     {
         bool jumpKeyPressed = Input.GetKeyDown(KeyCode.Space);
 
-        if ((isGrounded || (canDoubleJump && isDoubleJumpEnable)) && jumpKeyPressed)
+        if ((isGrounded || (canDoubleJump && playerExtras.IsDoubleJumpEnable)) && jumpKeyPressed)
         {
-            if (isGrounded && isDoubleJumpEnable)
+            if (isGrounded && playerExtras.IsDoubleJumpEnable)
                 canDoubleJump = true;
             else
                 canDoubleJump = false;
@@ -95,24 +96,6 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && other.gameObject.CompareTag("Ground"))
         {
             hitGround = true;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        switch (collision.tag)
-        {
-            case "Coin":
-                scoreManager.CoinsCollected += scoreManager.CoinValue;
-                scoreManager.UpdateScore();
-                audioFX.PlayFX(AudioFX.AudioClipName.Coin);
-                collision.gameObject.SetActive(false);
-                break;
-            case "DoubleJump":
-                audioFX.PlayFX(AudioFX.AudioClipName.DoubleJump);
-                collision.gameObject.SetActive(false);
-                isDoubleJumpEnable = true;
-                break;
         }
     }
 
