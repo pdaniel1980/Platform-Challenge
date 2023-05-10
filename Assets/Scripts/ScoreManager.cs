@@ -13,14 +13,14 @@ public class ScoreManager : MonoBehaviour
     public float DistanceTraveled { get => _distanceTraveled; set => _distanceTraveled = value; }
     public int CoinValue { get => _coinValue; }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    //private void Awake()
+    //{
+    //    DontDestroyOnLoad(gameObject);
+    //}
 
     public void UpdateScore()
     {
-        scoreText.text = "Score: " + _coinsCollected;
+        scoreText.text = "Score: " + PlayerPrefs.GetInt("CoinsScore");
     }
 
 }

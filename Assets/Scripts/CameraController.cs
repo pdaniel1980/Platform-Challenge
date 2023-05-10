@@ -4,12 +4,24 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] GameObject playerGO;
     [SerializeField] float limit = -5f;
+    Transform playerTransform;
+    Transform cameraTransform;
+
+    private void Awake()
+    {
+        cameraTransform = transform;
+    }
+
+    private void Start()
+    {
+        playerTransform = playerGO.transform;
+    }
 
     void Update()
     {
-        if (transform.position.y > limit)
+        if (cameraTransform.position.y > limit)
         {
-            transform.position = new Vector3(transform.position.x, playerGO.transform.position.y, transform.position.z);
+            cameraTransform.position = new Vector3(cameraTransform.position.x, playerTransform.position.y, cameraTransform.position.z);
         }
     }
 }

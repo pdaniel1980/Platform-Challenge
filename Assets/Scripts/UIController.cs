@@ -9,12 +9,19 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        scoreManagerGO = GameObject.Find("ScoreManager");
-        coinsCollectedText.text = scoreManagerGO.GetComponent<ScoreManager>().CoinsCollected.ToString();
+        //scoreManagerGO = GameObject.Find("ScoreManager");
+        //coinsCollectedText.text = scoreManagerGO.GetComponent<ScoreManager>().CoinsCollected.ToString();
+        coinsCollectedText.text = PlayerPrefs.GetInt("CoinsScore").ToString();
     }
 
     public void RetryGame()
     {
+        ResetScore();
         SceneManager.LoadScene("LevelScene");
+    }
+
+    private void ResetScore()
+    {
+        PlayerPrefs.SetInt("CoinsScore", 0);
     }
 }

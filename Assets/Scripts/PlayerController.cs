@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform transformCheckGroundedPoint;
     [SerializeField] GameObject scoreManagerGO;
     private PlayerExtras playerExtras;
-    ScoreManager scoreManager;
     Rigidbody2D rb;
     
     Animator animatorPlayer;
@@ -36,7 +35,6 @@ public class PlayerController : MonoBehaviour
         lastPlayerPositionY = transformCheckGroundedPoint.position.y;
         animatorPlayer = playerGO.GetComponent<Animator>();
         audioFX = audioFXGO.GetComponent<AudioFX>();
-        scoreManager = scoreManagerGO.GetComponent<ScoreManager>();
     }
 
     void Update()

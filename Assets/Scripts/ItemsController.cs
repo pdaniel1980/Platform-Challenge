@@ -34,6 +34,7 @@ public class ItemsController : MonoBehaviour
         {
             case ItemEnum.Coin:
                 scoreManager.CoinsCollected += scoreManager.CoinValue;
+                PlayerPrefs.SetInt("CoinsScore", scoreManager.CoinsCollected);
                 scoreManager.UpdateScore();
                 audioFX.PlayFX(AudioFX.AudioClipName.Coin);
                 itemGO.SetActive(false);
