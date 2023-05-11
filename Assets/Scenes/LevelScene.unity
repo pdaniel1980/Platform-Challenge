@@ -430,7 +430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 2.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGO: {fileID: 1064790651}
-  limit: -0.5
+  limit: 2.8
 --- !u!1 &566726750
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,10 +534,10 @@ RectTransform:
   m_Father: {fileID: 1259245442}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.948, y: 499.38}
-  m_SizeDelta: {x: 1886.1, y: 81.2495}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 664, y: -63.119995}
+  m_SizeDelta: {x: 1004.9509, y: 126.23999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627607251
 MonoBehaviour:

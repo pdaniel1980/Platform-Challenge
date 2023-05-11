@@ -19,7 +19,12 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (cameraTransform.position.y > limit)
+        FocusPlayer();
+    }
+
+    private void FocusPlayer()
+    {
+        if (playerTransform.position.y >= limit)
         {
             cameraTransform.position = new Vector3(cameraTransform.position.x, playerTransform.position.y, cameraTransform.position.z);
         }
