@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     void CheckIsLanding()
     {
-        if (lastPlayerPositionY >= transformCheckGroundedPoint.position.y)
+        if (lastPlayerPositionY > transformCheckGroundedPoint.position.y)
         {
             animatorPlayer.SetBool(landingId, true);
         }
